@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAVIMAN ALOE VERA - Class of 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #04150e; color: white; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(52, 211, 153, 0.1); }
+        .gradient-text { background: linear-gradient(to right, #34d399, #5eead4, #bef264); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-glow { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-teal-900/20 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div id="intro" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#061c13] text-center p-6 transition-opacity duration-700">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-600/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="relative z-10 space-y-8 glass p-10 rounded-3xl max-w-md w-full shadow-2xl">
+            <i data-lucide="leaf" class="w-12 h-12 text-emerald-400 mx-auto drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]"></i>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter">
+                XAVIMAN<br><span class="gradient-text">ALOE VERA</span>
+            </h1>
+            <p class="text-emerald-100/70 font-medium">Kenangan Kelas 10.1</p>
+            <button onclick="startApp()" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(52,211,153,0.4)]">
+                <i data-lucide="play" class="w-5 h-5 fill-current"></i> Open Our Memories
+            </button>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden relative z-10 opacity-0 transition-opacity duration-1000">
+        <audio id="bgm" loop src="./lagu kenangan.mp3"></audio>
+        
+        <button onclick="toggleAudio()" class="fixed bottom-6 right-6 z-50 p-4 bg-[#0a271c]/80 glass rounded-full shadow-xl hover:scale-110 transition-all group">
+            <i id="music-icon" data-lucide="music" class="w-6 h-6 text-emerald-400"></i>
+        </button>
+
+        <header class="pt-24 pb-20 px-6 text-center">
+            <div class="inline-flex items-center px-4 py-1.5 mb-6 text-sm font-medium rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                <i data-lucide="leaf" class="w-4 h-4 mr-2"></i> Fresh Memories • Class of 2026
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight drop-shadow-lg">XAVIMAN <span class="gradient-text">ALOE VERA</span></h1>
+            <p class="max-w-2xl mx-auto text-emerald-100/60 text-lg">"Waktu mungkin terus berjalan, tapi momen di 10.1 Xaviman akan selalu abadi di sini. Kami datang sebagai orang asing, berproses sebagai teman, dan menetap sebagai kenangan yang takkan pudar."</p>
+        </header>
+
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="relative p-1 rounded-3xl bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-500 overflow-hidden shadow-2xl">
+                <div class="relative bg-[#061c13] rounded-[22px] p-8 md:p-12 flex flex-col md:row items-center gap-10">
+                    <img src="./paman.jpeg" class="w-48 h-48 rounded-full border-4 border-emerald-500/30">
+                    <div class="text-center md:text-left flex-1">
+                        <span class="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs font-bold rounded">Wali Kelas 10.1</span>
+                        <h2 class="text-3xl font-bold my-4">Bapak Moh. Mansur Maturidi S.Pd</h2>
+                        <p class="text-lg text-emerald-100/80 italic leading-relaxed">"Terima kasih telah menjadi bagian dari perjalanan ini. Jadikan kenangan di 10.1 sebagai bekal untuk menaklukkan masa depan. Kalian semua luar biasa!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 pb-20">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold">Anak-anak Pak Mansur Nih Boshh</h2>
+                <div class="h-px bg-emerald-500/20 flex-1"></div>
+            </div>
+            <div id="student-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"></div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 pb-32">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold">Galeri Foto Bersama</h2>
+                <div class="h-px bg-emerald-500/20 flex-1"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="./landscape1.jpg" onerror="this.src='https://images.unsplash.com/photo-1523050853023-8c2d890e7df5?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape2.jpg" onerror="this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape3.jpg" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape4.jpg" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape5.jpg" onerror="this.src='https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape6.jpg" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape7.jpg" onerror="this.src='https://images.unsplash.com/photo-1475483768296-6163e08872a1?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape8.jpg" onerror="this.src='https://images.unsplash.com/photo-1525921429624-479b6a29d840?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape9.jpg" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+                <img src="./landscape10.jpg" onerror="this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000'" class="rounded-3xl glass w-full aspect-video object-cover hover:scale-[1.02] transition-transform duration-500 border border-white/10 shadow-2xl">
+            </div>
+        </section>
+
+        <footer class="py-12 text-center text-emerald-100/30 border-t border-white/5">
+            <p>Created by Aditya Fadlan • 2026</p>
+        </footer>
+    </div>
+
+    <div id="modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass max-w-md w-full rounded-3xl p-8 relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i data-lucide="x"></i></button>
+            <div id="modal-content" class="text-center"></div>
+        </div>
+    </div>
+
+    <script>
+    const rawData = [
+        { id: 1, name: "Abdul Maher badilah", quote: "Berangkat pagi demi absen, tidur lagi demi masa depan. 😴" },
+        { id: 2, name: "Abdullah Syafi'i", quote: "Cukup matematika yang rumit, pertemanan kita jangan. 🤙" },
+        { id: 3, name: "Abdurrahman Al Hafijd", quote: "Gagal jangan nangis berhasil jangan sombong karna hidup laki laki tidak di rayakan kecuali kematian" },
+        { id: 4, name: "Adinda Syifa Kirana", quote: "Kantin adalah tempat ternyaman saat otak sudah mulai berasap. 🍜" },
+        { id: 5, name: "Aditya Fadlan", quote: "Imajinasi lebih penting daripada pengetahuan. Pengetahuan terbatas, sedangkan imajinasi mencakup seluruh dunia. - Albert Einstein" },
+        { id: 6, name: "Afifa Anggie Safitri", quote: "Mengejar deadline sambil mengejar restu semesta. ✨" },
+        { id: 7, name: "Afra Saidah Clara", quote: "Tumbuh itu pasti, tapi jadi dewasa itu pilihan. Enjoy every moment! 🌸" },
+        { id: 8, name: "Ahmad Alfachregi", quote: "Definisi bahagia itu sederhana: Jam kosong dan wifi kencang. 🚀" },
+        { id: 9, name: "Aisyah Shafa Azzahra", quote: "Sabar ya hati, bentar lagi juga libur kok. Semangat! 🧸" },
+        { id: 10, name: "Aiyra Sayfani Fahrizal", quote: "Terima kasih Xaviman, sudah jadi bagian dari cerita masa remajaku. 📖" },
+        { id: 11, name: "Alnaira Raihanun Taoikurohman", quote: "Jalani saja dulu, urusan hasil belakangan yang penting berproses. ✨" },
+        { id: 12, name: "Ayra Excellia", quote: "Orang hebat bukan yang tak pernah jatuh, tapi yang selalu bangkit lagi." },
+        { id: 13, name: "Azzhrotun Nabilla", quote: "Focus on yourself, till the focus is on you. Stay classy! 💎" },
+        { id: 14, name: "Faqih Azka Firdausa", quote: "Sekolah bukan cuma soal nilai, tapi soal siapa yang bertahan paling lama. 😎" },
+        { id: 15, name: "Indah Komalasari", quote: "Mencintai prosesnya, meski tugasnya kadang di luar nalar. ☁️" },
+        { id: 16, name: "Kenza Azalia Aziz", quote: "Be yourself, everyone else is already taken. Stay unique! 🦋" },
+        { id: 17, name: "M.Fajril Syahly Rahman", quote: "Ilmu padi tetap dipake, menyala abangkuh tapi tetap rendah hati. 🔥" },
+        { id: 18, name: "Muhammad Taqiy Ayyaasyi", quote: "Satu satunya tempat dimana impianmu menjadi tidak mungkin adalah didalam pikiranmu sendiri -Robbert H.Schuller" },
+        { id: 19, name: "Nadhifah Salsabila Putri", quote: "Cloudy days make the sunny ones feel even better. Keep glowing! ☀️" },
+        { id: 20, name: "Nadin Azra Ramadhani", quote: "“I’m learning to be calm, like the sunset that stays beautiful even as it fades.”" },
+        { id: 21, name: "Na'ila Farah Dina", quote: "Do more of what makes you happy, like pulang sekolah gas drakor. 📺" },
+        { id: 22, name: "Naufal Sidiq Maulana", quote: "Masa depan itu misteri, yang pasti hari ini kita seru-seruan bareng." },
+        { id: 23, name: "Penny Faustina Ramadhan", quote: "Always find a reason to smile, even when the teacher gives a surprise test. 🍭" },
+        { id: 24, name: "Puri Aulia Kasih", quote: "Let life surprise you. Nikmati setiap drama di sekolah ini. 🎭" },
+        { id: 25, name: "Raihan Fadlillah Haidar Azzam", quote: "Berani bermimpi, berani juga buat bangun dan mewujudkannya. 💪" },
+        { id: 26, name: "Raisyah Salsabilla Putri", quote: "Stay positive, work hard, and make it happen. You got this! 🌟" },
+        { id: 27, name: "Ratu Azka Isnaini Al Qahtani", quote: "Keep your head up, princess. Your crown shouldn't fall. 👑" },
+        { id: 28, name: "Razka Nauvaldi Azriel Salam", quote: "Jangan dengerin kata orang, dengerin kata hati aja. Solid terus! 🤘" },
+        { id: 29, name: "Salsa Billa Jaenudin", quote: "Life is short, make every outfit and every memory count. 👗" },
+        { id: 30, name: "Salwa Salsabilla", quote: "Kadang kita butuh jeda untuk bisa lari lebih kencang lagi. ☕" },
+        { id: 31, name: "Sirojul Arham", quote: "Mending capek belajar daripada capek nyari alasan buat bolos. Eh? 😂" },
+        { id: 32, name: "Siti Nur Hafizhah", quote: "Percaya sama diri sendiri, kamu lebih hebat dari yang kamu kira. ✨" },
+        { id: 33, name: "Suryatno", quote: "Hidup itu simpel, kitanya aja yang sering bikin ribet. Keep it easy. 🍃" },
+        { id: 34, name: "Tsamara Alawiy jauza", quote: "Grow through what you go through. Xaviman taught me a lot. 🌱" },
+        { id: 35, name: "Zafri Muhammad Nur", quote: "Solidaritas tanpa batas, karena kita satu keluarga di 10.1. 🤝" },
+        { id: 36, name: "Zaskia Namira Putri", quote: "The best is yet to come. See you on top, guys! 🎓" }
+    ];
+
+    const students = [];
+    for (let i = 1; i <= 36; i++) {
+        const existingData = rawData.find(d => d.id === i);
+        students.push({
+            id: i,
+            name: existingData ? existingData.name : `Siswa Abad ke-${i}`,
+            quote: existingData ? existingData.quote : "Sukses terus buat Xaviman! 🚀",
+            image: "./foto (" + i + ").jpg"
+        });
+    }
+
+    function startApp() {
+        const intro = document.getElementById('intro');
+        intro.style.opacity = '0';
+        setTimeout(() => {
+            intro.style.display = 'none';
+            const main = document.getElementById('main-content');
+            main.classList.remove('hidden');
+            setTimeout(() => main.style.opacity = '1', 50);
+            document.getElementById('bgm').play();
+        }, 700);
+    }
+
+    const grid = document.getElementById('student-grid');
+    students.forEach(s => {
+        const card = document.createElement('div');
+        card.className = "group cursor-pointer rounded-2xl glass p-2 hover:bg-emerald-900/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(52,211,153,0.2)]";
+        card.onclick = () => openModal(s);
+        card.innerHTML = `
+            <div class="aspect-[4/5] rounded-xl overflow-hidden bg-emerald-900/30 mb-4 border border-white/5">
+                <img src="${s.image}" onerror="this.src='https://api.dicebear.com/7.x/micah/svg?seed=${s.name}'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="p-2 text-center">
+                <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">Absen ${s.id}</p>
+                <h3 class="font-bold truncate text-sm text-white">${s.name}</h3>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    function openModal(s) {
+        const modal = document.getElementById('modal');
+        const content = document.getElementById('modal-content');
+        content.innerHTML = `
+            <div class="relative w-40 h-40 mx-auto mb-6">
+                <div class="absolute inset-0 bg-emerald-500 blur-2xl opacity-20 animate-pulse"></div>
+                <img src="${s.image}" onerror="this.src='https://api.dicebear.com/7.x/micah/svg?seed=${s.name}'" class="relative w-full h-full object-cover rounded-full border-4 border-emerald-500/30 shadow-2xl">
+            </div>
+            <span class="text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase">No. Absen ${s.id}</span>
+            <h2 class="text-3xl font-bold mt-2 mb-6 text-white tracking-tight">${s.name}</h2>
+            <div class="bg-[#0a271c] p-6 rounded-2xl border border-emerald-500/20 italic text-emerald-50 shadow-inner">"${s.quote}"</div>
+        `;
+        modal.classList.remove('hidden');
+    }
+
+    function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+
+    function toggleAudio() {
+        const audio = document.getElementById('bgm');
+        const icon = document.getElementById('music-icon');
+        if (audio.paused) { audio.play(); icon.setAttribute('data-lucide', 'music'); }
+        else { audio.pause(); icon.setAttribute('data-lucide', 'pause'); }
+        lucide.createIcons();
+    }
+
+    lucide.createIcons();
+</script>
+</body>
+</html>
